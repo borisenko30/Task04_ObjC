@@ -10,17 +10,17 @@
 
 @interface NSString (IDPRandomString)
 
-+ (id)alphabetByAppendingAlphabet:(id)alphabet appendedAlphabet:(id)appendedAlphabet;
++ (instancetype)alphabetByAppendingAlphabet:(id)alphabet toAlphabet:(id)appendedAlphabet;
 
-+ (id)alphanumericAlphabet;
-+ (id)numericAlphabet;
-+ (id)letterAlphabet;
-+ (id)lowercaseLetterAlphabet;
-+ (id)uppercaseLetterAlphabet;
-+ (id)alphabetWithUnicodeRange:(NSRange)range;
++ (instancetype)alphanumericAlphabet;
++ (instancetype)numericAlphabet;
++ (instancetype)letterAlphabet;
++ (instancetype)lowercaseLetterAlphabet;
++ (instancetype)uppercaseLetterAlphabet;
++ (instancetype)alphabetWithUnicodeRange:(NSRange)range;
 
-+ (id)randomString;
-+ (id)randomStringWithLength:(NSUInteger)length;
-+ (id)randomStringWithLength:(NSUInteger)length alphabet:(NSString *)alphabet;
++ (instancetype)randomString;
++ (instancetype)randomStringWithLength:(NSUInteger)length;
++ (instancetype)randomStringWithLength:(NSUInteger)length alphabet:(NSString *)alphabet;
 
 @end

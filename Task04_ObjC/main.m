@@ -13,5 +13,6 @@ int main(int argc, const char * argv[]) {
     @autoreleasepool {
         IDPRandomStringTest();
     }
+    
     return 0;
 }

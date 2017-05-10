@@ -13,38 +13,37 @@
 
 @implementation NSString (IDPRandomString)
 
-+ (id)alphabetByAppendingAlphabet:(id)alphabet appendedAlphabet:(id)appendedAlphabet {
-    if (!appendedAlphabet) {
-        return nil;
+- (instancetype)alphabetByAppendingAlphabet:(NSString *)alphabet {
+    id result = self;
+    if (alphabet) {
+        result = [result stringByAppendingString:alphabet];
     }
     
-    NSMutableString *result = [NSMutableString stringWithString:alphabet];
-    
-    return [result stringByAppendingString:appendedAlphabet];
+    return [[self class] stringWithString:result];
 }
 
-+ (id)alphanumericAlphabet {
-    return [self alphabetByAppendingAlphabet:[self letterAlphabet] appendedAlphabet:[self numericAlphabet]];
++ (instancetype)alphanumericAlphabet {
+    return [self alphabetByAppendingAlphabet:[self letterAlphabet] toAlphabet:[self numericAlphabet]];
 }
 
-+ (id)numericAlphabet {
++ (instancetype)numericAlphabet {
     return [self alphabetWithUnicodeRange:IDPNumericAlphabet];
 }
 
-+ (id)lowercaseLetterAlphabet {
++ (instancetype)lowercaseLetterAlphabet {
     return [self alphabetWithUnicodeRange:IDPLowercaseLetterAlphabet];
 }
 
-+ (id)uppercaseLetterAlphabet {
++ (instancetype)uppercaseLetterAlphabet {
     return [self alphabetWithUnicodeRange:IDPUppercaseLetterAlphabet];
 }
 
-+ (id)letterAlphabet {
++ (instancetype)letterAlphabet {
     return [self alphabetByAppendingAlphabet:[self lowercaseLetterAlphabet]
-                            appendedAlphabet:[self uppercaseLetterAlphabet]];
+                                  toAlphabet:[self uppercaseLetterAlphabet]];
 }
 
-+ (id)alphabetWithUnicodeRange:(NSRange)range {
++ (instancetype)alphabetWithUnicodeRange:(NSRange)range {
     NSMutableString *result = [NSMutableString string];
     for (unichar character = range.location; character < NSMaxRange(range); character++) {
         [result appendFormat:@"%c", character];
@@ -53,15 +52,15 @@
     return result;
 }
 
-+ (id)randomString {
++ (instancetype)randomString {
     return [self randomStringWithLength:IDPRandomWithRange(IDPRandomStringLengthRange)];
 }
 
-+ (id)randomStringWithLength:(NSUInteger)length {
++ (instancetype)randomStringWithLength:(NSUInteger)length {
     return [self randomStringWithLength:length alphabet:[self alphanumericAlphabet]];
 }
 
-+ (id)randomStringWithLength:(NSUInteger)length alphabet:(NSString *)alphabet {
++ (instancetype)randomStringWithLength:(NSUInteger)length alphabet:(NSString *)alphabet {
     NSMutableString *result = [NSMutableString stringWithCapacity:length];
     NSUInteger alphabetLength =  alphabet.length;
     for (int i = 0; i < length; i++) {
