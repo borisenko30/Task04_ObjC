@@ -16,6 +16,6 @@ NSUInteger IDPRandomWithRange(NSRange range) {
     return range.location + IDPRandom(range.length);
 }
 
-NSUInteger IDPRandomBool() {
+BOOL IDPRandomBool() {
     return IDPRandom(2);
 }

@@ -27,6 +27,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		5627EF911EC45172004B62A9 /* IDPMacros.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IDPMacros.h; sourceTree = "<group>"; };
 		56D661C91EC0A02800876306 /* Task04_ObjC */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Task04_ObjC; sourceTree = BUILT_PRODUCTS_DIR; };
 		56D661CC1EC0A02800876306 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		56D661DB1EC0A28100876306 /* NSString+IDPRandomString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+IDPRandomString.h"; sourceTree = "<group>"; };
@@ -110,6 +111,7 @@
 				56D661E21EC0A63900876306 /* IDPRandom.m */,
 				56D661E51EC0A73300876306 /* IDPConstants.h */,
 				56D661E61EC0A73300876306 /* IDPConstants.m */,
+				5627EF911EC45172004B62A9 /* IDPMacros.h */,
 			);
 			name = AuxiliaryLib;
 			sourceTree = "<group>";
@@ -302,6 +304,7 @@
 				56D661D21EC0A02800876306 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

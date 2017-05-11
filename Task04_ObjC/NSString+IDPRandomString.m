@@ -11,36 +11,33 @@
 #import "IDPRandom.h"
 #import "IDPConstants.h"
 
-@implementation NSString (IDPRandomString)
+static NSRange IDPMakeRange(unichar lower, unichar upper);
 
-- (instancetype)alphabetByAppendingAlphabet:(NSString *)alphabet {
-    id result = self;
-    if (alphabet) {
-        result = [result stringByAppendingString:alphabet];
-    }
-    
-    return [[self class] stringWithString:result];
+NSRange IDPMakeRange(unichar lower, unichar upper) {
+    NSRange range = NSMakeRange(lower, upper - lower + 1);
+    return range;
 }
 
+@implementation NSString (IDPRandomString)
+
 + (instancetype)alphanumericAlphabet {
-    return [self alphabetByAppendingAlphabet:[self letterAlphabet] toAlphabet:[self numericAlphabet]];
+    return [self stringWithString:[[self letterAlphabet] alphabetByAppendingAlphabet:[self numericAlphabet]]];
 }
 
 + (instancetype)numericAlphabet {
-    return [self alphabetWithUnicodeRange:IDPNumericAlphabet];
+    return [self stringWithString:[self alphabetWithUnicodeRange:IDPMakeRange('0','9')]];
 }
 
 + (instancetype)lowercaseLetterAlphabet {
-    return [self alphabetWithUnicodeRange:IDPLowercaseLetterAlphabet];
+    return [self stringWithString:[self alphabetWithUnicodeRange:IDPMakeRange('a','z')]];
 }
 
 + (instancetype)uppercaseLetterAlphabet {
-    return [self alphabetWithUnicodeRange:IDPUppercaseLetterAlphabet];
+    return [self stringWithString:[self alphabetWithUnicodeRange:IDPMakeRange('A','Z')]];
 }
 
 + (instancetype)letterAlphabet {
-    return [self alphabetByAppendingAlphabet:[self lowercaseLetterAlphabet]
-                                  toAlphabet:[self uppercaseLetterAlphabet]];
+    return [self stringWithString:[[self lowercaseLetterAlphabet] alphabetByAppendingAlphabet:[self uppercaseLetterAlphabet]]];
 }
 
 + (instancetype)alphabetWithUnicodeRange:(NSRange)range {
@@ -49,15 +46,15 @@
         [result appendFormat:@"%c", character];
     }
     
-    return result;
+    return [self stringWithString:result];
 }
 
 + (instancetype)randomString {
-    return [self randomStringWithLength:IDPRandomWithRange(IDPRandomStringLengthRange)];
+    return [self stringWithString:[self randomStringWithLength:IDPRandomWithRange(IDPRandomStringLengthRange)]];
 }
 
 + (instancetype)randomStringWithLength:(NSUInteger)length {
-    return [self randomStringWithLength:length alphabet:[self alphanumericAlphabet]];
+    return [self stringWithString:[self randomStringWithLength:length alphabet:[self alphanumericAlphabet]]];
 }
 
 + (instancetype)randomStringWithLength:(NSUInteger)length alphabet:(NSString *)alphabet {
@@ -68,7 +65,18 @@
         [result appendFormat:@"%c", character];
     }
     
+    return [self stringWithString:result];
+}
+
+- (instancetype)alphabetByAppendingAlphabet:(NSString *)alphabet {
+    id result = self;
+    if (alphabet) {
+        result = [result stringByAppendingString:alphabet];
+    }
+    
+    //result = [[self class] stringWithString:result];
+    
     return result;
 }
+
 @end
- 

@@ -8,11 +8,8 @@
 
 #import "IDPConstants.h"
 
-#define constantInit(type, name, value) type const name = value;
-#define constantInitWithRange(type, name, value1, value2) type const name = {value1, value2};
-
-constantInit(NSUInteger, IDPRandomStringLength, 10);
-constantInitWithRange(NSRange, IDPRandomStringLengthRange, 4, 8);
-constantInitWithRange(NSRange, IDPLowercaseLetterAlphabet, 'a', 26);
-constantInitWithRange(NSRange, IDPUppercaseLetterAlphabet, 'A', 26);
-constantInitWithRange(NSRange, IDPNumericAlphabet, '0', 10);
+IDPInitConstant(NSUInteger, IDPRandomStringLength, 10);
+IDPInitConstantRange(NSRange, IDPRandomStringLengthRange, 4, 8);
+IDPInitConstantRange(NSRange, IDPLowercaseLetterAlphabet, 'a', 26);
+IDPInitConstantRange(NSRange, IDPUppercaseLetterAlphabet, 'A', 26);
+IDPInitConstantRange(NSRange, IDPNumericAlphabet, '0', 10);

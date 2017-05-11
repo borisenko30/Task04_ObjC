@@ -10,8 +10,6 @@
 
 @interface NSString (IDPRandomString)
 
-+ (instancetype)alphabetByAppendingAlphabet:(id)alphabet toAlphabet:(id)appendedAlphabet;
-
 + (instancetype)alphanumericAlphabet;
 + (instancetype)numericAlphabet;
 + (instancetype)letterAlphabet;
@@ -22,5 +20,7 @@
 + (instancetype)randomString;
 + (instancetype)randomStringWithLength:(NSUInteger)length;
 + (instancetype)randomStringWithLength:(NSUInteger)length alphabet:(NSString *)alphabet;
+
+- (instancetype)alphabetByAppendingAlphabet:(NSString *)alphabet;
 
 @end

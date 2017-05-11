@@ -8,10 +8,10 @@
 
 #import <Foundation/Foundation.h>
 
-#define constantDeclaration(type, name) extern type const name;
+#import "IDPMacros.h"
 
-constantDeclaration(NSUInteger, IDPRandomStringLength);
-constantDeclaration(NSRange, IDPRandomStringLengthRange);
-constantDeclaration(NSRange, IDPLowercaseLetterAlphabet);
-constantDeclaration(NSRange, IDPUppercaseLetterAlphabet);
-constantDeclaration(NSRange, IDPNumericAlphabet);
+IDPDeclareConstant(NSUInteger, IDPRandomStringLength);
+IDPDeclareConstant(NSRange, IDPRandomStringLengthRange);
+IDPDeclareConstant(NSRange, IDPLowercaseLetterAlphabet);
+IDPDeclareConstant(NSRange, IDPUppercaseLetterAlphabet);
+IDPDeclareConstant(NSRange, IDPNumericAlphabet);

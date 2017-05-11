@@ -10,4 +10,4 @@
 
 extern NSUInteger IDPRandom(NSUInteger max);
 extern NSUInteger IDPRandomWithRange(NSRange range);
-extern NSUInteger IDPRandomBool();
+extern BOOL IDPRandomBool();
