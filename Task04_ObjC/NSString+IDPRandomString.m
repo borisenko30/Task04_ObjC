@@ -16,6 +16,12 @@ IDPStaticConstantRange(NSRange, IDPRandomStringLengthRange, 4, 8);
 static NSRange IDPMakeRange(unichar lower, unichar upper);
 
 NSRange IDPMakeRange(unichar lower, unichar upper) {
+    if (lower > upper) {
+        unichar temp;
+        temp = lower;
+        lower = upper;
+        upper = temp;
+    }
     NSRange range = NSMakeRange(lower, upper - lower + 1);
     
     return range;
@@ -71,13 +77,11 @@ NSRange IDPMakeRange(unichar lower, unichar upper) {
     return [self stringWithString:result];
 }
 
-- (instancetype)alphabetByAppendingAlphabet:(NSString *)alphabet {
+- (NSString *)alphabetByAppendingAlphabet:(NSString *)alphabet {
     id result = self;
     if (alphabet) {
         result = [result stringByAppendingString:alphabet];
     }
-    
-    //result = [[self class] stringWithString:result];
     
     return result;
 }

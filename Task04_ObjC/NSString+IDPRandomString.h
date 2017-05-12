@@ -21,6 +21,6 @@
 + (instancetype)randomStringWithLength:(NSUInteger)length;
 + (instancetype)randomStringWithLength:(NSUInteger)length alphabet:(NSString *)alphabet;
 
-- (instancetype)alphabetByAppendingAlphabet:(NSString *)alphabet;
+- (NSString *)alphabetByAppendingAlphabet:(NSString *)alphabet;
 
 @end
