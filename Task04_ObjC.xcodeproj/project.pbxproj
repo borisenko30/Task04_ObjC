@@ -11,7 +11,6 @@
 		56D661DD1EC0A28100876306 /* NSString+IDPRandomString.m in Sources */ = {isa = PBXBuildFile; fileRef = 56D661DC1EC0A28100876306 /* NSString+IDPRandomString.m */; };
 		56D661DF1EC0A2A700876306 /* IDPRandomStringTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 56D661DE1EC0A2A700876306 /* IDPRandomStringTests.m */; };
 		56D661E31EC0A63900876306 /* IDPRandom.m in Sources */ = {isa = PBXBuildFile; fileRef = 56D661E21EC0A63900876306 /* IDPRandom.m */; };
-		56D661E71EC0A73300876306 /* IDPConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 56D661E61EC0A73300876306 /* IDPConstants.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -36,8 +35,6 @@
 		56D661E01EC0A2B700876306 /* IDPRandomStringTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IDPRandomStringTests.h; sourceTree = "<group>"; };
 		56D661E11EC0A63900876306 /* IDPRandom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDPRandom.h; sourceTree = "<group>"; };
 		56D661E21EC0A63900876306 /* IDPRandom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IDPRandom.m; sourceTree = "<group>"; };
-		56D661E51EC0A73300876306 /* IDPConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDPConstants.h; sourceTree = "<group>"; };
-		56D661E61EC0A73300876306 /* IDPConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IDPConstants.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,8 +106,6 @@
 			children = (
 				56D661E11EC0A63900876306 /* IDPRandom.h */,
 				56D661E21EC0A63900876306 /* IDPRandom.m */,
-				56D661E51EC0A73300876306 /* IDPConstants.h */,
-				56D661E61EC0A73300876306 /* IDPConstants.m */,
 				5627EF911EC45172004B62A9 /* IDPMacros.h */,
 			);
 			name = AuxiliaryLib;
@@ -175,7 +170,6 @@
 			files = (
 				56D661E31EC0A63900876306 /* IDPRandom.m in Sources */,
 				56D661CD1EC0A02800876306 /* main.m in Sources */,
-				56D661E71EC0A73300876306 /* IDPConstants.m in Sources */,
 				56D661DD1EC0A28100876306 /* NSString+IDPRandomString.m in Sources */,
 				56D661DF1EC0A2A700876306 /* IDPRandomStringTests.m in Sources */,
 			);

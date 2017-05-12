@@ -9,12 +9,15 @@
 #import "NSString+IDPRandomString.h"
 
 #import "IDPRandom.h"
-#import "IDPConstants.h"
+#import "IDPMacros.h"
+
+IDPStaticConstantRange(NSRange, IDPRandomStringLengthRange, 4, 8);
 
 static NSRange IDPMakeRange(unichar lower, unichar upper);
 
 NSRange IDPMakeRange(unichar lower, unichar upper) {
     NSRange range = NSMakeRange(lower, upper - lower + 1);
+    
     return range;
 }
 

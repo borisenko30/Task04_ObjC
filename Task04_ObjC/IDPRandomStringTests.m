@@ -10,7 +10,9 @@
 
 #import "NSString+IDPRandomString.h"
 
-#import "IDPConstants.h"
+#import "IDPMacros.h"
+
+IDPStaticConstant(NSUInteger, IDPRandomStringLength, 10);
 
 void IDPRandomStringTest() {
     NSLog(@"Random string: %@", [NSString randomString]);
